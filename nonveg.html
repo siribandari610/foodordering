@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NON-VEGETARIAN</title>
+  <style>
+    /* Existing CSS styles */
+
+    /* New CSS for centering images and text */
+    .next-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+    .col-sm-4 {
+      text-align: center;
+      width: 33.33%; /* Adjust column width for 3 columns in a row */
+      box-sizing: border-box; /* Include padding and border in width */
+      padding: 10px; /* Add some padding for spacing */
+      float: left; /* Float the columns for 2 rows */
+    }
+
+    .col-sm-4 img {
+      display: block;
+      margin: 0 auto;
+      width: 80%; /* Adjust image width */
+      height: auto; /* Maintain aspect ratio */
+    }
+
+    .col-sm-4 h2, .col-sm-4 h4 {
+      text-align: center;
+    }
+
+    .counter-button{/* CSS for the counter button */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .counter-button button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+
+    .counter-button button.increment, .counter-button button.decrement {
+      margin: 0 10px;
+    }
+
+    /* Clear floats for new rows */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align: center;">Non-Veg Items!!!</h1>
+
+  <div class="container">
+    <!-- First Row -->
+    <div class="row">
+      <div class="col-sm-4">
+        <img src="biryani.jpg" alt="Chicken Biryani">
+        <h2>Chicken Biryani</h2>
+        <h4>Cost: 110/-</h4>
+        <div class="counter-button">
+          <button class="decrement" onclick="decrementCounter('biryani')">-</button>
+          <span id="biryani-counter">0</span>
+          <button class="increment" onclick="incrementCounter('biryani')">+</button>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <img src="tds-noodles-2.jpg" alt="Chicken Noodles">
+        <h2>Chicken Noodles</h2>
+        <h4>Cost: 90/-</h4>
+        <div class="counter-button">
+          <button class="decrement" onclick="decrementCounter('noodles')">-</button>
+          <span id="noodles-counter">0</span>
+          <button class="increment" onclick="incrementCounter('noodles')">+</button>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <img src="o.jpg" alt="Parotta">
+        <h2>Parotta</h2>
+        <h4>Cost: 80/-</h4>
+        <div class="counter-button">
+          <button class="decrement" onclick="decrementCounter('parotta')">-</button>
+          <span id="parotta-counter">0</span>
+          <button class="increment" onclick="incrementCounter('parotta')">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <img src="th (1).jpg" alt="sandwich">
+      <h2>Chicken Sandwich</h2>
+      <h4>Cost: 70/-</h4>
+      <div class="counter-button">
+        <button class="decrement" onclick="decrementCounter('sandwich')">-</button>
+        <span id="sandwich-counter">0</span>
+        <button class="increment" onclick="incrementCounter('sandwich')">+</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <img src="th.jpg" alt="noodle">
+    <h2>Egg Noodles</h2>
+    <h4>Cost: 80/-</h4>
+    <div class="counter-button">
+      <button class="decrement" onclick="decrementCounter('noodle')">-</button>
+      <span id="noodle-counter">0</span>
+      <button class="increment" onclick="incrementCounter('noodle')">+</button>
+    </div>
+  </div>
+</div>
+<div class="col-sm-4">
+  <img src="DSC02794.JPG" width="80" alt="manchurian">
+  <h2>Chicken Manchurian</h2>
+  <h4>Cost: 60/-</h4>
+  <div class="counter-button">
+    <button class="decrement" onclick="decrementCounter('manchurian')">-</button>
+    <span id="manchurian-counter">0</span>
+    <button class="increment" onclick="incrementCounter('manchurian')">+</button>
+  </div>
+</div>
+</div>
+
+    <!-- Second Row -->
+    <div class="row">
+      <!-- Repeat similar structure for the next set of items -->
+      <!-- ... -->
+    </div>
+  </div>
+  <!-- "Next" button -->
+  <button class="next-button" onclick="nextPage()">Next</button>
+  <a href="#" class="btn-Next" onclick="navigateNext()">Next</a>
+
+  <script>
+    // JavaScript function to handle "Next" button click
+    function nextPage() {
+      // Implement the logic for navigating to the next page or section
+      // You can redirect to a new page or scroll to the next section.
+      // For demonstration purposes, we'll simply display an alert.
+      alert("Next button clicked!");
+      window.location.href = 'last.html';
+    }
+
+  
+    // JavaScript function to increment the counter for the specified item
+    function incrementCounter(item) {
+      const counterElement = document.getElementById(`${item}-counter`);
+      let counterValue = parseInt(counterElement.innerText, 10);
+      counterValue++;
+      counterElement.innerText = counterValue;
+    }
+
+    // JavaScript function to decrement the counter for the specified item
+    function decrementCounter(item) {
+      const counterElement = document.getElementById(`${item}-counter`);
+      let counterValue = parseInt(counterElement.innerText, 10);
+      if (counterValue > 0) {
+        counterValue--;
+        counterElement.innerText = counterValue;
+      }
+    }
+  </script>
+</body>
+</html>

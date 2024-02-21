@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DRINKS</title>
+  <style>
+    /* Existing CSS styles */
+
+    /* New CSS for centering images and text */
+    .next-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+    .col-sm-4 {
+      text-align: center;
+      width: 33.33%; /* Adjust column width for 3 columns in a row */
+      box-sizing: border-box; /* Include padding and border in width */
+      padding: 10px; /* Add some padding for spacing */
+      float: left; /* Float the columns for 2 rows */
+    }
+
+    .col-sm-4 img {
+      display: block;
+      margin: 0 auto;
+      width: 80%; /* Adjust image width */
+      height: auto; /* Maintain aspect ratio */
+    }
+
+    .col-sm-4 h2, .col-sm-4 h4 {
+      text-align: center;
+    }
+
+    .counter-button{/* CSS for the counter button */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .counter-button button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+
+    .counter-button button.increment, .counter-button button.decrement {
+      margin: 0 10px;
+    }
+
+    /* Clear floats for new rows */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align: center;">DRINKS!!!</h1>
+
+  <div class="container">
+    <!-- First Row -->
+    <div class="row">
+      <div class="col-sm-4">
+        <img src="watterbottle.jpg" alt="waterbottle">
+        <h2>waterbottle</h2>
+        <h4>Cost: 20/-</h4>
+        <div class="counter-button">
+          <button class="decrement" onclick="decrementCounter('waterbottle')">-</button>
+          <span id="waterbottle-counter">0</span>
+          <button class="increment" onclick="incrementCounter('waterbottle')">+</button>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <img src="shake.jpg" alt="drinks">
+        <h2>Milk Shake</h2>
+        <h4>Cost: 40/-</h4>
+        <div class="counter-button">
+          <button class="decrement" onclick="decrementCounter('drinks')">-</button>
+          <span id="drinks-counter">0</span>
+          <button class="increment" onclick="incrementCounter('drinks')">+</button>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <img src="Orange juice.jpg" alt="milkshake">
+        <h2>Orange juice</h2>
+        <h4>Cost: 30/-</h4>
+        <div class="counter-button">
+          <button class="decrement" onclick="decrementCounter('milkshake')">-</button>
+          <span id="milkshake-counter">0</span>
+          <button class="increment" onclick="incrementCounter('milkshake')">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <img src="soft drinks.jpg" alt="juice">
+      <h2>Soft Drinks</h2>
+      <h4>Cost: 20/-</h4>
+      <div class="counter-button">
+        <button class="decrement" onclick="decrementCounter('juice')">-</button>
+        <span id="juice-counter">0</span>
+        <button class="increment" onclick="incrementCounter('juice')">+</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <img src="apple.jpg" alt="cream">
+    <h2>Apple juice</h2>
+    <h4>Cost: 30/-</h4>
+    <div class="counter-button">
+      <button class="decrement" onclick="decrementCounter('cream')">-</button>
+      <span id="cream-counter">0</span>
+      <button class="increment" onclick="incrementCounter('cream')">+</button>
+    </div>
+    
+  </div>
+  <!-- "Next" button -->
+  <button class="next-button" onclick="nextPage()">Next</button>
+
+  <script>
+    function nextPage() {
+      // Implement the logic for navigating to the next page or section
+      // You can redirect to a new page or scroll to the next section.
+      // For demonstration purposes, we'll simply display an alert.
+      alert("Next button clicked!");
+      window.location.href = 'last.html';
+    }
+
+
+
+    // JavaScript function to increment the counter for the specified item
+    function incrementCounter(item) {
+      const counterElement = document.getElementById(`${item}-counter`);
+      let counterValue = parseInt(counterElement.innerText, 10);
+      counterValue++;
+      counterElement.innerText = counterValue;
+    }
+
+    // JavaScript function to decrement the counter for the specified item
+    function decrementCounter(item) {
+      const counterElement = document.getElementById(`${item}-counter`);
+      let counterValue = parseInt(counterElement.innerText, 10);
+      if (counterValue > 0) {
+        counterValue--;
+        counterElement.innerText = counterValue;
+      }
+    }
+  </script>
+</body>
+</html>
+

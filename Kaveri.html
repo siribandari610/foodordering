@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title> 
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: lightblue;
+      text-align: center;
+      padding: 50px;
+    }
+    .login-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+    }
+    .login-details {
+      flex: 1;
+      text-align: left;
+      padding-left: 20px;
+    }
+    .login-image {
+      max-width: 150px;
+      height: auto;
+      margin-right: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .form-group input {
+      width: calc(100% - 20px);
+      padding: 10px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .btn-login {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      border: none;
+      border-radius: 5px;
+      background-color: #007BFF;
+      color: #ffffff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .btn-login:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+    <h1> Welcome to Isthara Food Court!!!</h1>
+  <div class="login-container">
+    <div class="login-image">
+      <img src="MREC LOGO.jpg" Width="180">
+    </div>
+    <div class="login-details">
+      <h2>Login</h2>
+      <form>
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" placeholder="Enter your username" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label for="mobile">Mobile Number:</label>
+          <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
+        </div> 
+        <a href="#" class="btn-login" onclick="navigateNext()">Login</a>
+                          
+      </form>
+    </div>
+  </div>
+  <script>
+    function navigateNext() {
+      // Replace 'nextPage.html' with the actual URL of the next page
+      window.location.href = 'menu.html';
+    }
+  </script>
+</body>
+</html>
